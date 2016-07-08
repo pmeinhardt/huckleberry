@@ -4,8 +4,4 @@ set -e
 
 cd "$(dirname $0)"/..
 
-# install linuxbrew formulae
-brew bundle
-
-# run other install scripts
 find . -name install.sh | while read installer; do sh -c "${installer}"; done

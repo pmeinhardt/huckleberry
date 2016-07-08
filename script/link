@@ -6,15 +6,15 @@ cd "$(dirname "$0")/.."
 ZSH=$(pwd -P)
 
 info () {
-  echo "  \033[0;34m..\033[0m $1"
+  echo -e "  \033[0;34m..\033[0m $1"
 }
 
 success () {
-  echo "  \033[0;32m++\033[0m $1"
+  echo -e "  \033[0;32m++\033[0m $1"
 }
 
 user () {
-  echo "  \033[0;33m??\033[0m $1"
+  echo -e "  \033[0;33m??\033[0m $1"
 }
 
 gitconfig () {
@@ -29,8 +29,8 @@ gitconfig () {
     read -e githubmail
 
     sed \
-      -e "s/AUTHORNAME/$git_authorname/g" \
-      -e "s/AUTHOREMAIL/$git_authoremail/g" \
+      -e "s/AUTHORNAME/$githubname/g" \
+      -e "s/AUTHOREMAIL/$githubmail/g" \
       git/gitconfig.local.symlink.template \
       > git/gitconfig.local.symlink
 
