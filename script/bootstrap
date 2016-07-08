@@ -26,4 +26,4 @@ echo -e "\033[0;1m› change shell\033[0m"
 sudo apt-get install -y zsh
 chsh -s $(which zsh)
 
-echo -e "\033[0;1m› reboot when ready\033[0m"
+echo -e "\033[0;1m› may need reboot\033[0m"
