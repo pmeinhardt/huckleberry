@@ -1,0 +1,24 @@
+# Local/private config goes in the include
+[include]
+        path = ~/.gitconfig.local
+[core]
+        excludesfile = ~/.gitignore
+[alias]
+        s       = status
+        b       = branch
+        co      = checkout
+        flame   = blame
+        promote = !$ZSH/bin/git-promote
+        wtf     = !$ZSH/bin/git-wtf
+        count   = !git shortlog -sn
+        rank-contributors = !$ZSH/bin/git-rank-contributors
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+[apply]
+        whitespace = nowarn
+[push]
+        default = simple
+[hub]
+        protocol = https
