@@ -5,6 +5,9 @@ set -e
 echo -e "\033[0;1m› configure and link dotfiles\033[0m"
 source script/link
 
+echo -e "\033[0;1m› create directories in home\033[0m"
+mkdir -p ~/code ~/documents ~/downloads ~/movies ~/music ~/pictures ~/public
+
 echo -e "\033[0;1m› system update\033[0m"
 sudo apt-get update
 sudo apt-get upgrade
