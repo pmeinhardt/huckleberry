@@ -12,4 +12,4 @@ sudo apt-get install -y $pkgs
 mkdir -p ~/local/{bin,etc,include,lib,man,sbin,share,src}
 
 # run install scripts
-find . -name install.sh | while read installer; do sh -c "${installer}"; done
+find . -name install.sh | while read installer; do sh "${installer}"; done
