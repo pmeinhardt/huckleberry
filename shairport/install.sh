@@ -11,6 +11,4 @@ fi
 
 cd shairport
 
-./configure && make
-
-cp shairport ~/local/bin
+./configure && make && PREFIX=~/local make install
