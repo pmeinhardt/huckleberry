@@ -3,6 +3,21 @@
 ack-grep
 golang
 grc
+mplayer
 openssl
 vim
 wget
+
+# shairport dependencies (https://github.com/abrasive/shairport)
+
+avahi-utils
+libao-dev
+libasound2-dev
+libavahi-client-dev
+libcrypt-openssl-rsa-perl
+libio-socket-inet6-perl
+libmodule-build-perl
+libpulse-dev
+libssl-dev
+libwww-perl
+pulseaudio
