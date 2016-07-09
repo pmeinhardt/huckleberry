@@ -1,6 +1,6 @@
 # huckleberry
 
-This is how I set up my Raspberry Pi (Raspbian)
+This is how I set up my Raspberry Pi (Raspbian).
 
 ## topical
 
