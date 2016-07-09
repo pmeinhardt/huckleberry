@@ -4,4 +4,9 @@ set -e
 
 cd "$(dirname $0)"/..
 
+# install apt packages
+pkgs=$(cat aptfile | grep -o "^[^#]*" | tr -s "\n" " " | sed -e "s/[[:space:]]*$//g")
+sudo apt-get install -y $pkgs
+
+# run install scripts
 find . -name install.sh | while read installer; do sh -c "${installer}"; done

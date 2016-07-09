@@ -1,0 +1,8 @@
+# install packages (script/install)
+
+ack-grep
+golang
+grc
+openssl
+vim
+wget
