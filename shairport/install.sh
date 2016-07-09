@@ -2,7 +2,7 @@
 
 if test $(which shairport); then exit 0; fi
 
-cd ~/local/src
+cd ~/.local/src
 
 if [ ! -d shairport ]
 then
@@ -11,4 +11,4 @@ fi
 
 cd shairport
 
-./configure && make && PREFIX=~/local make install
+./configure && make && PREFIX=~/.local make install

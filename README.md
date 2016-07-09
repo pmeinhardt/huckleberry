@@ -20,7 +20,7 @@ There are a few special files in the hierarchy.
 - **topic/path.zsh** - any file named `path.zsh` is loaded first and is expected to setup `$PATH` or similar
 - **topic/completion.zsh** - any file named `completion.zsh` is loaded last and is expected to setup autocomplete
 - **topic/*.symlink** - any files ending in `*.symlink` get symlinked into your `$HOME`
-- **topic/install.sh** - any files named `install.sh` are run and are expected to install additional software into `~/local`
+- **topic/install.sh** - any files named `install.sh` are run and are expected to install additional software into `~/.local`
 
 ## install
 
@@ -53,19 +53,19 @@ which sets up a few paths that'll be different on your particular machine.
 These directories will be created in your `$HOME` directory on bootstrap:
 
 ```
+.local
 code
 documents
 downloads
-local
 movies
 music
 pictures
 public
 ```
 
-The `local` directory is used as the destination directory by the additional
-`install.sh` scripts. Sources are downloaded into `~/local/src`; `~/local/bin`
-and `~/local/sbin` will be added to your `$PATH`.
+The `.local` directory is used as the destination directory by the additional
+`install.sh` scripts. Sources are downloaded into `~/.local/src`;
+`~/.local/bin` and `~/.local/sbin` will be added to your `$PATH`.
 
 ## more
 

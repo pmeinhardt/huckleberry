@@ -9,7 +9,7 @@ pkgs=$(cat aptfile | grep -o "^[^#]*" | tr -s "\n" " " | sed -e "s/[[:space:]]*$
 sudo apt-get install -y $pkgs
 
 # create local install directory
-mkdir -p ~/local/{bin,etc,include,lib,man,sbin,share,src}
+mkdir -p ~/.local/{bin,etc,include,lib,man,sbin,share,src}
 
 # run install scripts
 find . -name install.sh | while read installer; do sh "${installer}"; done
