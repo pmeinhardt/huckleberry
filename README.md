@@ -1,5 +1,6 @@
 # huckleberry
 
+Your dotfiles are how you personalize your system.
 This is how I set up my Raspberry Pi (Raspbian).
 
 ## topical
@@ -15,12 +16,10 @@ symlinked without extension into `$HOME` when you run `script/bootstrap`.
 There are a few special files in the hierarchy.
 
 - **bin/** - anything in here will be added to your `$PATH`
-- **aptfile** - this is a list of apt packages to install
 - **topic/*.zsh** - any files ending in `.zsh` will be loaded into your environment
 - **topic/path.zsh** - any file named `path.zsh` is loaded first and is expected to setup `$PATH` or similar
 - **topic/completion.zsh** - any file named `completion.zsh` is loaded last and is expected to setup autocomplete
 - **topic/*.symlink** - any files ending in `*.symlink` get symlinked into your `$HOME`
-- **topic/install.sh** - any files named `install.sh` are run and are expected to install additional software into `~/.local`
 
 ## install
 
@@ -43,34 +42,17 @@ cd ~/.dotfiles
 ./script/bootstrap
 ```
 
-This will symlink the appropriate files in `~.dotfiles` to your home directory. Everything is configured and tweaked within `~/.dotfiles`.
+This will symlink the appropriate files in `~/.dotfiles` to your home
+directory. Everything is configured and tweaked within `~/.dotfiles`.
 
 The main file you'll want to change right off the bat is `zsh/zshrc.symlink`,
 which sets up a few paths that'll be different on your particular machine.
 
-## home
-
-These directories will be created in your `$HOME` directory on bootstrap:
-
-```
-.local
-code
-documents
-downloads
-movies
-music
-pictures
-public
-```
-
-The `.local` directory is used as the destination directory by the additional
-`install.sh` scripts. Sources are downloaded into `~/.local/src`;
-`~/.local/bin` and `~/.local/sbin` will be added to your `$PATH`.
-
 ## more
 
-You can also setup your Pi remotely via Ansible:
-[pmeinhardt/huck-up](https://github.com/pmeinhardt/huck-up)
+For a completely automated setup of your Pi, including SSH keys, installing
+software and additional configuration as well as these dotfiles, see
+[pmeinhardt/huck-up](https://github.com/pmeinhardt/huck-up).
 
 ## thanks
 

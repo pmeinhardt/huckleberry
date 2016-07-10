@@ -2,28 +2,7 @@
 
 set -e
 
-echo -e "\033[0;1m› configure and link dotfiles\033[0m"
+cd "$(dirname "$0")/.."
+
+source script/configure
 source script/link
-
-echo -e "\n\033[0;1m› create directories in home\033[0m"
-mkdir -p ~/code ~/documents ~/downloads ~/movies ~/music ~/pictures ~/public
-
-echo -e "\n\033[0;1m› system update\033[0m"
-sudo apt-get update
-sudo apt-get upgrade
-
-echo -e "\n\033[0;1m› install essentials\033[0m"
-sudo apt-get install -y \
-  build-essential \
-  curl \
-  git \
-  python-setuptools
-
-echo -e "\n\033[0;1m› install software\033[0m"
-source script/install
-
-echo -e "\n\033[0;1m› change shell\033[0m"
-if test ! $(which zsh); then sudo apt-get install -y zsh; fi
-if test "${SHELL}" != $(which zsh); then chsh -s $(which zsh); fi
-
-echo -e "\n\033[0;1m› may need reboot\033[0m"

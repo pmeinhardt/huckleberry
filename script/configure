@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+set -e
+
+cd "$(dirname "$0")/.."
+ZSH=$(pwd -P)
+
+info () {
+  echo -e "\033[0;34m..\033[0m $1"
+}
+
+success () {
+  echo -e "\033[0;32m++\033[0m $1"
+}
+
+user () {
+  echo -e "\033[0;33m??\033[0m $1"
+}
+
+gitconfig () {
+  if [ ! -f git/gitconfig.local.symlink ]
+  then
+    info "set up git config"
+
+    user "what is your github name?"
+    read -e githubname
+
+    user "what is your github email?"
+    read -e githubmail
+
+    sed \
+      -e "s/AUTHORNAME/$githubname/g" \
+      -e "s/AUTHOREMAIL/$githubmail/g" \
+      git/gitconfig.local.symlink.template \
+      > git/gitconfig.local.symlink
+
+    success "git config"
+  fi
+}
+
+gitconfig
