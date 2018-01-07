@@ -84,16 +84,16 @@ set scrolloff=3                     " keep at least 3 lines above/below
 set sidescrolloff=3                 " at least 3 columns left/right (w/ nowrap)
 
 
+""" Mappings
+
+nnoremap <tab> gt
+nnoremap <s-tab> gT
+
+
 """ Functions
 
 " Strip trailing whitespace:
-map <leader>s :%s/\s\+$//gc<CR>
-
-" Toggle list option:
-map <leader>l :set list!<CR>
-
-" Toggle line wrap:
-map <leader>w :set wrap!<CR>
+map <leader>s :%s/\s\+$//gc<cr>
 
 
 """ Use vim-plug to manage vim bundles:
@@ -105,14 +105,15 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-dispatch'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'editorconfig/editorconfig-vim'
 
-Plug 'elixir-lang/vim-elixir'
-
-Plug '~/.vim/unplugged/json'
+Plug 'sheerun/vim-polyglot'
+Plug 'sirver/ultisnips'
 
 call plug#end()
 
@@ -138,3 +139,10 @@ endif
 
 " Disable editor config for vim-fugitive and remote files.
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+" Configure vim-polyglot language packs.
+let g:polyglot_disabled = ['css', 'yaml']
+
+" Configure custom snippet directory names and suppress 'no python' warnings.
+let g:UltiSnipsSnippetDirectories=["snips"]
+let g:UltiSnipsNoPythonWarning = 1
