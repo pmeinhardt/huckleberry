@@ -1,10 +1,13 @@
+# uncomment the next as well as the last line to profile shell initialization
+# zmodload zsh/zprof
+
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/code
 
-# stash your environment variables in ~/.localrc. this means they'll stay out
+# stash your environment variables in ~/.localrc, this means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
 # you'll have access to them in your scripts.
 if [[ -a ~/.localrc ]]
@@ -39,3 +42,14 @@ do
 done
 
 unset config_files
+
+# better history, credits to https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
+
+# print profiling information
+# zprof
